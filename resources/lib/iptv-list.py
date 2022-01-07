@@ -7,12 +7,18 @@ import os
 import xbmc
 import xbmcgui
 import xbmcaddon
+addon = xbmcaddon.Addon('plugin.program.iptv-list_refresh')
+providerURL = addon.getSetting('entry1')
+groupsallow = addon.getSetting('entry2')
+userAgent = addon.getSetting('entry3')
+localout = addon.getSetting('entry4')
+
 from m3u_parser import M3uParser
 
 parser = M3uParser()
 # You could set check_live to True to only grab streams that are tested and working.
 # I have not tested this.
-parser.parse_m3u(path='http://alienstreams.fi:7070/playlist/joose.just.joose@gmail.com/Km9C4FP4Gp/m3u_plus', check_live=False)
+parser.parse_m3u(path=providerURL, check_live=False)
 # I used ^$ around all the filters except [VOD] so that *only* that word is matched
 # as the group-title (the module calls it category).
 # The reason is that filter_by uses regex, so US would match on *anything* with
@@ -25,4 +31,4 @@ parser.filter_by(key='category', filters=['^Sverige$',
                                      '^Australien$',
                                      '^For Adults$',
                                      '\[VOD\]$'])
-parser.to_file("out.m3u", format="m3u")
+parser.to_file(localout, format="m3u")
