@@ -1,0 +1,38 @@
+# Addon language file 
+msgid ""
+msgstr ""
+"Project-Id-Version: 
+""Report-Msgid-Bugs-To: 
+""POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE
+""PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
+""Last-Translator: 
+""Language-Team: 
+""MIME-Version: 1.0
+""Content-Type: text/plain; charset=UTF-8
+""Content-Transfer-Encoding: 8bit
+""Language: not_set_yet
+""Plural-Forms: nplurals=2; plural=(n != 1);
+"
+#. Strings for plugin.program.iptv-list_refresh
+
+msgctxt "#32000" 
+msgid "IPTV-list Refresh Configuration" 
+msgstr ""
+
+msgctxt "#32001"
+msgid "Provider URL"
+msgstr ""
+
+msgctxt "#32002"
+msgid "Groups allowed"
+msgstr ""
+
+msgctxt "#32003"
+msgid "UserAgent"
+msgstr ""
+
+msgctxt "#32004"
+msgid "Localstorage"
+msgstr ""
+
+
