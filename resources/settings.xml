@@ -1,0 +1,46 @@
+<settings>
+<category label="32000">
+<setting id="entry1" type="string" label="#32001" help="">
+	<level>0</level>
+	<default/>
+	<constraints>
+		<allowempty>true</allowempty>
+	</constraints>
+	<control type="edit" format="string">
+		<heading>32001</heading>
+	</control>
+</setting>
+
+<setting id="entry2" type="string" label="#32002" help="">
+	<level>0</level>
+	<default/>
+	<constraints>
+		<allowempty>true</allowempty>
+	</constraints>
+	<control type="edit" format="string">
+		<heading>32002</heading>
+	</control>
+</setting>
+
+<setting id="entry3" type="string" label="#32003" help="">
+	<level>0</level>
+	<default/>
+	<constraints>
+		<allowempty>true</allowempty>
+	</constraints>
+	<control type="edit" format="string">
+		<heading>32003</heading>
+	</control>
+</setting>
+
+<setting id="entry4" type="string" label="#32004" help="">
+	<level>0</level>
+	<default/>
+	<constraints>
+		<allowempty>true</allowempty>
+	</constraints>
+	<control type="edit" format="string">
+		<heading>32004</heading>
+	</control>
+</setting>
+
