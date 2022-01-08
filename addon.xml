@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.iptv-list_refresh" name="IPTV-list Refresh" version="0.0.1" provider-name="zjoasan">
+<addon id="plugin.program.iptv-list_refresh" name="IPTV-list Refresh" version="0.0.2" provider-name="zjoasan">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 	</requires>
-	<extension point="xbmc.python.pluginsource" library="resources/bin/iptv-list.py">
+	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
@@ -18,9 +18,10 @@
 		<email></email> <!-- may be omitted  -->
 		<source></source>
 		<news>First version, just getting it to work.</news>
-                <assets>
-                        <icon>resources/icon.png</icon>
-                        <fanart>resources/fanart.png</fanart>
-                </assets>
-        </extension>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.png</fanart>
+    		</assets>
+	</extension>
 </addon>
+
