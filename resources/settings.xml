@@ -2,10 +2,10 @@
 <settings version="1"> 
 	<section id="plugin.program.iptv-list_refresh"> 
 		<category id="general" label="" help="">
-			<group id="1" label="#32000">
-				<setting id="entry1" type="string" label="#32001" help="">
+			<group id="1" label="32000">
+				<setting id="entry1" type="string" label="32001" help="">
 					<level>0</level>
-					<default>"https://iptv-org.github.io/iptv/index.m3u"</default>
+					<default>https://iptv-org.github.io/iptv/index.m3u</default>
 					<constraints>
 						<allowempty>false</allowempty>
 					</constraints>
@@ -13,7 +13,7 @@
 						<heading>32001</heading>
 					</control>
 				</setting>
-				<setting id="entry2" type="string" label="#32002" help="">
+				<setting id="entry2" type="string" label="32002" help="">
 					<level>0</level>
 					<default/>
 					<constraints>
@@ -23,9 +23,9 @@
 						<heading>32002</heading>
 					</control>
 				</setting>
-				<setting id="entry3" type="string" label="#32003" help="">
+				<setting id="entry3" type="string" label="32003" help="">
 					<level>0</level>
-					<default>"Kodi"</default>
+					<default>Kodi</default>
 					<constraints>
 						<allowempty>true</allowempty>
 					</constraints>
@@ -33,9 +33,9 @@
 						<heading>32003</heading>
 					</control>
 				</setting>
-				<setting id="entry4" type="string" label="#32004" help="">
+				<setting id="entry4" type="string" label="32004" help="">
 					<level>0</level>
-					<default>"/home/osmc/newlist.m3u"</default>
+					<default>/home/osmc/newlist.m3u</default>
 					<constraints>
 						<allowempty>false</allowempty>
 					</constraints>
