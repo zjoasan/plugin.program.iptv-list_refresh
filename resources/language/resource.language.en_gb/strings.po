@@ -1,22 +1,23 @@
-# Addon language file 
+# XBMC Media Center language file
+# Addon Name: IPTV-refresh
+# Addon id: plugin.program.iptv-list_refresh
+# Addon Provider: zjoasan + bmillham
 msgid ""
 msgstr ""
-"Project-Id-Version: 
-""Report-Msgid-Bugs-To: zjoasan
-""POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE
-""PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
-""Last-Translator: 
-""Language-Team: 
-""MIME-Version: 1.0
-""Content-Type: text/plain; charset=UTF-8
-""Content-Transfer-Encoding: 8bit
-""Language: en_GB
-""Plural-Forms: nplurals=2; plural=(n != 1);
-"
-#. Strings for plugin.program.iptv_refresh
+"Project-Id-Version: plugin.program.iptv-list_refresh\n"
+"Report-Msgid-Bugs-To: https://github.com/zjoasan/plugin.program.iptv-list_refresh\n"
+"POT-Creation-Date: 2022-01-08 10:12+CET\n"
+"PO-Revision-Date: 2022-01-08 10:12+CET\n"
+"Last-Translator: zjoasan\n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_gb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgctxt "#32000" 
-msgid "IPTV-refresh" 
+msgctxt "#32000"
+msgid "IPTV-refresh"
 msgstr ""
 
 msgctxt "#32001"
@@ -34,7 +35,3 @@ msgstr ""
 msgctxt "#32004"
 msgid "Local storage:"
 msgstr ""
-
-
-
-
