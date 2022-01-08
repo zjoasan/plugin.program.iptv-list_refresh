@@ -20,7 +20,7 @@
 		<news>First version, just getting it to work.</news>
 		<assets>
 			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.png</fanart>
+			<fanart>resources/fanart.jpg</fanart>
     		</assets>
 	</extension>
 </addon>
