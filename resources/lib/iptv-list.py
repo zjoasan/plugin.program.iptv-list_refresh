@@ -13,7 +13,8 @@ groupsallow = addon.getSetting('entry2')
 userAgent = addon.getSetting('entry3')
 localout = addon.getSetting('entry4')
 
-from m3u_parser import M3uParser
+#from m3u_parser import M3uParser
+from m3u_parser.m3u_parser import M3uParser
 
 parser = M3uParser()
 # You could set check_live to True to only grab streams that are tested and working.
