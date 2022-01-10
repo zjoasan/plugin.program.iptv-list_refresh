@@ -4,6 +4,7 @@
 # pip3 install m3u-parser
 import sys
 import os
+import json
 import xbmc
 import xbmcgui
 import xbmcaddon
@@ -13,7 +14,57 @@ groupsallow = addon.getSetting('entry2')
 userAgent = addon.getSetting('entry3')
 localout = addon.getSetting('entry4')
 
-from m3u_parser import M3uParser
+#from m3u_parser import M3uParser
+from m3u_parser.m3u_parser import M3uParser
+
+def disable_addon(addon_id):
+    request = {
+        "jsonrpc": "2.0",
+        "method": "Addons.SetAddonEnabled",
+        "params": {
+            "addonid": "%s" % addon_id,
+            "enabled": False
+        },
+        "id": 1
+    }
+
+    xbmc.log('MyAddonName -> disabling %s' % addon_id, xbmc.LOGDEBUG)
+    response = xbmc.executeJSONRPC(json.dumps(request))
+    response = json.loads(response)
+    try:
+        return response['result'] == 'OK'
+    except KeyError:
+        xbmc.log('MyAddonName -> disable_addon received an unexpected response',
+                 xbmc.LOGERROR)
+        return False
+
+def enable_addon(addon_id):
+    request = {
+        "jsonrpc": "2.0",
+        "method": "Addons.SetAddonEnabled",
+        "params": {
+            "addonid": "%s" % addon_id,
+            "enabled": True
+        },
+        "id": 1
+    }
+
+    xbmc.log('MyAddonName -> enabling %s' % addon_id, xbmc.LOGDEBUG)
+
+    response = xbmc.executeJSONRPC(json.dumps(request))
+    response = json.loads(response)
+    try:
+        return response['result'] == 'OK'
+    except KeyError:
+        xbmc.log('MyAddonName -> enable_addon received an unexpected response',
+                 xbmc.LOGERROR)
+        return False
+    
+def  change_m3u(newpath):
+    xbmcaddon.Addon(pvr.iptvsimple).setSettingInt(m3uPathType, 0)
+    xbmcaddon.Addon(pvr.iptvsimple).setSettingString(m3uPath, newpath)
+    xbmcaddon.Addon(pvr.iptvsimple).setSettingString(m3uUrl, "")
+    xbmcaddon.Addon(pvr.iptvsimple).setSettingBool(m3uCache, False)
 
 parser = M3uParser()
 # You could set check_live to True to only grab streams that are tested and working.
@@ -31,4 +82,10 @@ parser.filter_by(key='category', filters=['^Sverige$',
                                      '^Australien$',
                                      '^For Adults$',
                                      '\[VOD\]$'])
+disable_addon(pvr.iptvsimple)
 parser.to_file(localout, format="m3u")
+change_m3u(localout)
+enable_addon(pvr.iptvsimple)
+
+mess = xbmcgui.Dialog()
+mess.ok("Update done","New m3u-file downloaded, filtered and saved at loation set in settings.")
