@@ -61,10 +61,10 @@ def enable_addon(addon_id):
         return False
     
 def  change_m3u(newpath):
-    xbmcaddon.Addon(pvr.iptvsimple).setSettingInt(m3uPathType, 0)
-    xbmcaddon.Addon(pvr.iptvsimple).setSettingString(m3uPath, newpath)
-    xbmcaddon.Addon(pvr.iptvsimple).setSettingString(m3uUrl, "")
-    xbmcaddon.Addon(pvr.iptvsimple).setSettingBool(m3uCache, False)
+    xbmcaddon.Addon("pvr.iptvsimple").setSettingInt(m3uPathType, 0)
+    xbmcaddon.Addon("pvr.iptvsimple").setSettingString(m3uPath, newpath)
+    xbmcaddon.Addon("pvr.iptvsimple").setSettingString(m3uUrl, "")
+    xbmcaddon.Addon("pvr.iptvsimple").setSettingBool(m3uCache, False)
 
 parser = M3uParser()
 # You could set check_live to True to only grab streams that are tested and working.
@@ -82,10 +82,10 @@ parser.filter_by(key='category', filters=['^Sverige$',
                                      '^Australien$',
                                      '^For Adults$',
                                      '\[VOD\]$'])
-disable_addon(pvr.iptvsimple)
+disable_addon("pvr.iptvsimple")
 parser.to_file(localout, format="m3u")
 change_m3u(localout)
-enable_addon(pvr.iptvsimple)
+enable_addon("pvr.iptvsimple")
 
 mess = xbmcgui.Dialog()
 mess.ok("Update done","New m3u-file downloaded, filtered and saved at loation set in settings.")
