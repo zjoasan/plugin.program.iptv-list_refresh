@@ -16,7 +16,7 @@ __author__ = "Zjoasan"
 __url__ = "https://github.com/zjoasan/"
 __git_url__ = "https://github.com/zjoasan/plugin.program.iptv-list_refresh/"
 __credits__ = "https://github.com/bmillham"
-__version__ = "0.0.5"
+__version__ = "0.0.6"
 
 dialog = xbmcgui.Dialog()
 addon = xbmcaddon.Addon(id='plugin.program.iptv-list_refresh')
