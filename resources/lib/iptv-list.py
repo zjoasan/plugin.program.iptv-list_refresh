@@ -13,9 +13,7 @@ groupsallow = addon.getSetting('entry2')
 userAgent = addon.getSetting('entry3')
 localout = addon.getSetting('entry4')
 
-#from m3u_parser import M3uParser
-from m3u_parser.m3u_parser import M3uParser
-import kodi_ia.kodi_ia
+from m3u_parser import M3uParser
 
 parser = M3uParser()
 # You could set check_live to True to only grab streams that are tested and working.
@@ -33,8 +31,4 @@ parser.filter_by(key='category', filters=['^Sverige$',
                                      '^Australien$',
                                      '^For Adults$',
                                      '\[VOD\]$'])
-kodi_ia.disable_addon(pvr.iptvsimple)
 parser.to_file(localout, format="m3u")
-kodi_ia.change_m3u(localout)
-kodi_ia.enable_addon(pvr.iptvsimple)
-
