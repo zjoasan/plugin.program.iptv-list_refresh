@@ -104,11 +104,11 @@ parser.parse_m3u(path=providerURL, check_live=False)
 # that just a single word is matched, use ^ at the start of the word.
 # For the [VOD] we only want to match when it's the last part of the category.
 #parser.filter_by(key='category', filters=['^Sverige$',
-                                     '^UK$',
-                                     '^US$',
-                                     '^Australien$',
-                                     '^For Adults$',
-                                     '\[VOD\]$'])
+#                                     '^UK$',
+#                                     '^US$',
+#                                     '^Australien$',
+#                                     '^For Adults$',
+#                                     '\[VOD\]$'])
 parser.filter_by(key='category', filters=parsedfilter)
 
 parser.to_file(localout, format="m3u")
