@@ -4,6 +4,8 @@
 # pip3 install m3u-parser
 import sys
 import os
+import re
+import string
 import json
 import time
 import xbmc
@@ -14,6 +16,7 @@ providerURL = addon.getSetting('entry1')
 groupsallow = addon.getSetting('entry2')
 userAgent = addon.getSetting('entry3')
 localout = addon.getSetting('entry4')
+
 
 #from m3u_parser import M3uParser
 from m3u_parser.m3u_parser import M3uParser
@@ -67,6 +70,29 @@ def  change_m3u(newpath):
     xbmcaddon.Addon("pvr.iptvsimple").setSettingString("m3uUrl", "")
     xbmcaddon.Addon("pvr.iptvsimple").setSettingBool("m3uCache", False)
 
+
+mystring = groupsallow
+allowable_chars = string.printable.replace("*", "")
+
+def parse_to_regex(substring):
+    substring = substring.strip()
+    if substring[0] == "*":
+        start = ""
+    else:
+        start = "^"
+
+    middle = re.escape(''.join([x for x in substring if x in allowable_chars]))
+
+    if substring[-1] == "*":
+        end = ""
+    else:
+        end = "$"
+
+    return (start + middle + end).replace(",_", ",")
+
+parsedfilter = [parse_to_regex(y) for y in mystring.split(",")]
+
+
 parser = M3uParser()
 # You could set check_live to True to only grab streams that are tested and working.
 # I have not tested this.
@@ -77,13 +103,13 @@ parser.parse_m3u(path=providerURL, check_live=False)
 # US in the category. US$ will only match on something ending in US. To ensure
 # that just a single word is matched, use ^ at the start of the word.
 # For the [VOD] we only want to match when it's the last part of the category.
-parser.filter_by(key='category', filters=['^Sverige$',
+#parser.filter_by(key='category', filters=['^Sverige$',
                                      '^UK$',
                                      '^US$',
                                      '^Australien$',
                                      '^For Adults$',
                                      '\[VOD\]$'])
-#parser.filter_by(key='category', filters=[groupsallow])
+parser.filter_by(key='category', filters=parsedfilter)
 
 parser.to_file(localout, format="m3u")
 change_m3u(localout)
